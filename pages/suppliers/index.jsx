@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 
 export default function Home({ suppliers }) {
   function deleteSupplier(id) {
-    fetch(`/api/supplier/${id}`, {
+    fetch(`/api/suppliers/${id}`, {
       method: 'DELETE'
     })
       .then(res => res.json())
@@ -135,7 +135,7 @@ export default function Home({ suppliers }) {
 }
 
 export async function getServerSideProps() {
-  const res = await fetch(`http://localhost:3000/api/suppliers/`);
+  const res = await fetch(`http://stock-final-6238135.vercel.app/api/suppliers/`);
   const suppliers = await res.json();
   return { props: { suppliers } };
 }

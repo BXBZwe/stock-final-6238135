@@ -20,7 +20,7 @@ export default function Supplier({ supplier }) {
   }, [])
 
   const updateBlog = async (data) => {
-    const response = await fetch(`/api/supplier/${supplier._id}`, {
+    const response = await fetch(`/api/suppliers/${supplier._id}`, {
       method: "PUT", // *GET, POST, PUT, DELETE, etc.
       mode: "cors", // no-cors, *cors, same-origin
       cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
@@ -39,7 +39,7 @@ export default function Supplier({ supplier }) {
       alert("Error: " + result.error)
     } else {
       alert("Supplier updated")
-      window.location.href = "/Supplier"
+      window.location.href = "/suppliers"
     }
     console.log(result)
     setData(JSON.stringify(data))
@@ -86,7 +86,7 @@ export default function Supplier({ supplier }) {
 // STEP 1: This function will be executed at the server before loading the page.
 export async function getServerSideProps({ params }) {
   console.debug('params', params)
-  const res = await fetch(`http://localhost:3000/api/suppliers/${params.id}`)
+  const res = await fetch(`http://stock-final-6238135.vercel.app/suppliers/${params.id}`)
   const supplier = await res.json()
   console.debug('blog 1', supplier)
   return { props: { supplier } }

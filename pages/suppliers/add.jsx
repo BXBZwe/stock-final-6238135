@@ -6,7 +6,7 @@ export default function AddSupplierPage() {
     const [data, setData] = useState("");
 
     const saveSupplier = async (data) => {
-        const response = await fetch('/api/supplier', {
+        const response = await fetch('/api/suppliers', {
             method: "POST",
             mode: "cors",
             cache: "no-cache",
