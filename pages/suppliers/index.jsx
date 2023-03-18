@@ -3,10 +3,8 @@ import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
 export default function Home({ suppliers }) {
-
-
   function deleteSupplier(id) {
-    fetch(`/api/suppliers/${id}`,
+    fetch(`${process.env.NEXT_PUBLIC_APIURL}/suppliers/${id}`,
       {
         method: 'DELETE'
       })

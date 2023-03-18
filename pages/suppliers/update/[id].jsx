@@ -2,9 +2,8 @@
 Update page
 It populates the blog data into the form.
 */
-import Head from "next/head"
-import Link from "next/link"
-
+import Head from "next/head";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 
@@ -15,11 +14,9 @@ export default function Supplier({ supplier }) {
   const { register, handleSubmit, reset } = useForm();
   const [data, setData] = useState("");
 
-  useEffect(() => {
-    reset(supplier)
-  }, [])
 
-  const updateBlog = async (data) => {
+
+  const updateSupplier = async (data) => {
     const response = await fetch(`/api/suppliers/${supplier._id}`, {
       method: "PUT", // *GET, POST, PUT, DELETE, etc.
       mode: "cors", // no-cors, *cors, same-origin
@@ -61,7 +58,7 @@ export default function Supplier({ supplier }) {
 
 <p>{JSON.stringify(supplier)}</p>
       <div style={{ margin: '1rem' }}>
-        <form onSubmit={handleSubmit(updateBlog)}>
+        <form onSubmit={handleSubmit(updateSupplier)}>
           <h1>Update Supplier</h1>
           <label htmlFor="name">Name</label><br />
           <input id="name" {...register("name", { required: true })}
