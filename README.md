@@ -1,10 +1,11 @@
 
-# Supplier Management
+# Supplier Management (Final Exam - Web Dev)
 
-A web application for managing the suppliers' information including supplier's name, address, and phone number.
+A Web application for managing the suppliers' information including supplier's name, address, and phone number.
 
 ## Author 
 - [@Zwe Min Maw](https://www.github.com/BXBZwe)
+Id - 6238135
 
 ## Functionaility
 
