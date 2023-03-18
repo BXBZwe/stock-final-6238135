@@ -15,9 +15,6 @@ export default function Supplier({ supplier }) {
   const { register, handleSubmit, reset } = useForm();
   const [data, setData] = useState("");
 
-  useEffect(() => {
-    reset(supplier)
-  }, [])
 
   const updateBlog = async (data) => {
     const response = await fetch(`/api/suppliers/${supplier._id}`, {

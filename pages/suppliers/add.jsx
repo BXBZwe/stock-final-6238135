@@ -1,5 +1,8 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import Link from "next/link";
+import Head from "next/head";
+
 
 export default function AddSupplierPage() {
     const { register, handleSubmit } = useForm();
