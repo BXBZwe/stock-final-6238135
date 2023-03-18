@@ -28,7 +28,7 @@ export default function Supplier({ supplier }) {
 export async function getServerSideProps({ params }) {
   console.debug('params', params);
   const res = await fetch(`${process.env.NEXT_PUBLIC_APIURL}/suppliers/${params.id}`);
-  const supplier = await res.json();
-  console.debug('supplier 1', supplier);
-  return { props: { supplier } };
+  const suppliers = await res.json();
+  console.debug('supplier 1', suppliers);
+  return { props: { suppliers } };
 }
