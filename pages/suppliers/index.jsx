@@ -45,7 +45,10 @@ export default function Home({ suppliers }) {
                       {supplier.name}
                     </Link>
                   </td>
+                  <td style={{textAlign:'center'}}>{supplier.name}</td>
                   <td style={{textAlign:'center'}}>{supplier.address}</td>
+                  <td style={{textAlign:'center'}}>{supplier.phonenumber}</td>
+
                   <td>
                       <>
                         <Link href={`/suppliers/update/${supplier._id}`}>Update</Link>
@@ -69,7 +72,7 @@ export default function Home({ suppliers }) {
   )
 }
 export async function getServerSideProps() {
-  const res = await fetch(`http://localhost:3000/api/suppliers/`)
+  const res = await fetch(`${process.env.APIURL}/suppliers/`)
   const suppliers = await res.json()
   // console.debug('blog 1', blogs)
   return { props: { suppliers } }

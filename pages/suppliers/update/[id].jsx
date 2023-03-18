@@ -20,7 +20,7 @@ export default function Supplier({ supplier }) {
   }, [])
 
   const updateBlog = async (data) => {
-    const response = await fetch(`/api/blogs/articles/${supplier._id}`, {
+    const response = await fetch(`/api/suppliers/${supplier._id}`, {
       method: "PUT", // *GET, POST, PUT, DELETE, etc.
       mode: "cors", // no-cors, *cors, same-origin
       cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
@@ -45,7 +45,7 @@ export default function Supplier({ supplier }) {
     setData(JSON.stringify(data))
   }
 
-  console.log('blog 2', supplier)
+  console.log('supplier 2', supplier)
   if (!supplier) return (
     <div>
       <p>Supplier not found</p>
@@ -71,7 +71,7 @@ export default function Supplier({ supplier }) {
           <label htmlFor="address">Address</label>
           <input id="address" {...register("address", { required: true })} placeholder="Address"/>
           <label htmlFor="phonenumber">Phone number</label><br />
-          <input id="phonenumber" {...register("phonenumber")} placeholder="phone number"
+          <input id="phonenumber" {...register("phonenumber", { required: true })} placeholder="phone number"
             /><br />
           <input type="submit" />
           <p>{data}</p><br />
@@ -86,7 +86,7 @@ export default function Supplier({ supplier }) {
 // STEP 1: This function will be executed at the server before loading the page.
 export async function getServerSideProps({ params }) {
   console.debug('params', params)
-  const res = await fetch(`http://localhost:3000/api/suppliers/${params.id}`)
+  const res = await fetch(`${process.env.APIURL}/suppliers/${params.id}`)
   const supplier = await res.json()
   console.debug('blog 1', supplier)
   return { props: { supplier } }
