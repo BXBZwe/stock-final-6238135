@@ -24,7 +24,7 @@ export default function Home({ suppliers }) {
             <Link href="/">Home</Link>
           </li>
           <li>
-            <Link href="/Supplier/add">+ Add Supplier</Link>
+            <Link href="/suppliers/add">+ Add Supplier</Link>
           </li>
         </ul>
       </nav>
