@@ -64,11 +64,12 @@ export default function AddSupplierPage() {
               </tbody>
             </table>
             <input type="submit" className="button" />
-            <Link href="/suppliers">Back</Link>
+            <Link href="/suppliers" style={{ color:'black'}} >Back</Link>
             <p>{data}</p>
           </form>
           <style>
             {`
+
 
             .bg {
                 padding-top:200px;
@@ -92,6 +93,7 @@ export default function AddSupplierPage() {
               .title {
                 margin-top: 0;
                 text-align: center;
+                color: #000000;
               }
               .form {
                 display: flex;

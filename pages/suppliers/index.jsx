@@ -36,7 +36,7 @@ export default function Home({ suppliers }) {
               <th>Name</th>
               <th>Address</th>
               <th>Phone number</th>
-              <th>Actions</th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
@@ -44,18 +44,18 @@ export default function Home({ suppliers }) {
               return (
                 <tr key={supplier._id}>
                   <td>
-                    <Link href={`/Supplier/${supplier._id}`}>
+                    <Link href={`/suppliers/${supplier._id}`}>
                       {supplier.name}
                     </Link>
                   </td>
                   <td>{supplier.address}</td>
                   <td>{supplier.phonenumber}</td>
                   <td>
-                    <>
+                  
                       <Link href={`/suppliers/update/${supplier._id}`}>Update</Link>
                       &nbsp;&nbsp;&nbsp;
                       <button onClick={() => deleteSupplier(supplier._id)}>Delete</button>
-                    </>
+                  
                   </td>
                 </tr>
               );
@@ -102,7 +102,12 @@ export default function Home({ suppliers }) {
           width: 100%;
         }
 
-        th,
+        th{
+          text-align: left;
+          padding: 0.5rem;
+          border-bottom: 1px solid #ddd;
+          color: black;
+        }
         td {
           text-align: left;
           padding: 0.5rem;
