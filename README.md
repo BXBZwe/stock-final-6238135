@@ -4,7 +4,7 @@
 A web application for managing the suppliers' information including supplier's name, address, and phone number.
 
 ## Author 
-- [@Zwe Min Maw] (https://www.github.com/BXBZwe)
+- [@Zwe Min Maw](https://www.github.com/BXBZwe)
 
 ## Functionaility
 
